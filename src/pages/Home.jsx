@@ -7,6 +7,12 @@ import CTAButton from "../components/core/HomePage/Button";
 import Banner from "../assets/Images/banner.mp4";
 import CodeBlocks from "../components/core/HomePage/CodeBlocks";
 
+import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection";
+import TimelineSection from "../components/core/HomePage/TimelineSection";
+import InstructorSection from "../components/core/HomePage/InstructorSection";
+
+import ExploreMore from "../components/core/HomePage/ExploreMore";
+
 function Home() {
   return (
     <div>
@@ -127,6 +133,8 @@ function Home() {
             codeColor={`text-yellow-25`}
           />
         </div>
+
+        <ExploreMore></ExploreMore>
       </div>
       {/* Section 2 */}
       <div className="bg-pure-greys-5 text-richblack-700">
@@ -164,8 +172,16 @@ function Home() {
           </div>
           <div className="bg-pink-300"></div>
         </div>
+
+        <TimelineSection></TimelineSection>
+
+        <LearningLanguageSection></LearningLanguageSection>
       </div>
       {/* Section 3 */}
+
+      <div>
+        <InstructorSection></InstructorSection>
+      </div>
       {/* Footer */}
     </div>
   );
