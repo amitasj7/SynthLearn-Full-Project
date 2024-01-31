@@ -12,10 +12,12 @@ import TimelineSection from "../components/core/HomePage/TimelineSection";
 import InstructorSection from "../components/core/HomePage/InstructorSection";
 
 import ExploreMore from "../components/core/HomePage/ExploreMore";
+import Navbar from "../components/common/Navbar";
 
 function Home() {
   return (
     <div>
+      
       {/* Section 1 */}
       <div className="bg-pink-600 relative mx-auto flex flex-col w-11/12 items-center justify-between text-white">
         <Link to={"/signup"}>
