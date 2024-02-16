@@ -1,15 +1,12 @@
 // Rafc - React Arrow Function Component
 
-import React from 'react'
+import React from "react";
 
-const HighlightText = ({text}) => {
+const HighlightText = ({ text }) => {
   return (
     // TODO: Gradient dekhni hai
-    <span className='font-bold text-richblue-200'>
+    <span className="font-bold text-richblue-200"> {text}</span>
+  );
+};
 
-        {" "}{text}
-    </span>
-  )
-}
-
-export default HighlightText
+export default HighlightText;

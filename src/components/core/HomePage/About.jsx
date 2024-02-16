@@ -5,7 +5,7 @@ const About = ({ number, type }) => {
     
       <div className="flex flex-row justify-start items-center gap-5 ">
         <p className="text-3xl font-bold">{number}</p>
-        <p className="bg-pink-400 w-40">{type}</p>
+        <p className=" w-40">{type}</p>
       </div>
     
   );

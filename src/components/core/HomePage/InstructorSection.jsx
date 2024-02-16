@@ -1,40 +1,44 @@
-import React from "react";
-import InstructorImage from "../../../assets/Images/Instructor.png";
-import HighlightText from "./HighlightText";
-import Button from "./Button";
-import { FaArrowRight } from "react-icons/fa6";
+import React from 'react'
+import CTAButton from "../../../components/core/HomePage/Button";
+import { FaArrowRight } from "react-icons/fa";
+import Instructor from "../../../assets/Images/Instructor.png";
+import HighlightText from './HighlightText';
 
 const InstructorSection = () => {
   return (
-    <div className="bg-richblack-700 mt-16 w-full flex flex-row justify-center items-center gap-5">
-      <div className="bg-blue-900 w-[30%]">
-        <img
-          src={InstructorImage}
-          alt="InstructorImage"
-          className="shadow-white object-fit-cover w-full h-full"
-        />
-      </div>
-      <div className="bg-blue-400 flex flex-col gap-5 items-start w-[40%]">
-        <div className="text-4xl font-bold w-[40%]">
-          Become an <HighlightText text={"Instructor"}></HighlightText>
-        </div>
+    <div>
+        <div className="flex flex-col lg:flex-row gap-20 items-center">
+          <div className="lg:w-[50%]">
+            <img
+              src={Instructor}
+              alt=""
+              className="shadow-white shadow-[-20px_-20px_0_0]"
+            />
+          </div>
+          <div className="lg:w-[60%] flex gap-10 flex-col">
+            <h1 className="lg:w-[60%] text-4xl font-semibold ">
+              Become an
+              <HighlightText text={"instructor"} />
+            </h1>
 
-        <div className="">
-          Instructor from around the world teach millions of students on
-          SynthLearn. We Provides the tools and skills to teach what you love.
-        </div>
+            <p className="font-medium text-[16px] text-justify w-[90%] text-richblack-300">
+              Instructors from around the world teach millions of students on
+              StudyNotion. We provide the tools and skills to teach what you
+              love.
+            </p>
 
-        <div className="">
-          <Button active={true} linkto={"/signup"}>
-            <div className="flex items-center gap-2">
-              Start Learning Today
-              <FaArrowRight />
+            <div className="w-fit">
+              <CTAButton active={true} linkto={"/signup"}>
+                <div className="flex items-center gap-3">
+                  Start Teaching Today
+                  <FaArrowRight />
+                </div>
+              </CTAButton>
             </div>
-          </Button>
+          </div>
         </div>
-      </div>
     </div>
-  );
-};
+  )
+}
 
-export default InstructorSection;
+export default InstructorSection
