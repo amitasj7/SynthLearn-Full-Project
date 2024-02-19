@@ -6,6 +6,8 @@ import { setUser } from "../../slices/profileSlice";
 import { apiConnector } from "../apiconnector";
 import { endpoints } from "../apis";
 
+import axios from "axios";
+
 const {
   SENDOTP_API,
   SIGNUP_API,
@@ -16,9 +18,20 @@ const {
 
 export function sendOtp(email, navigate) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    // const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
+      /*    
+      axios
+        .post("http://localhost:4000/api/v1/auth/sendotp", { email })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("OTP Error:", error.message);
+        });
+ */
+
       const response = await apiConnector("POST", SENDOTP_API, {
         email,
         checkUserPresent: true,
@@ -35,10 +48,10 @@ export function sendOtp(email, navigate) {
       navigate("/verify-email");
     } catch (error) {
       console.log("SENDOTP API ERROR............", error);
-      toast.error("Could Not Send OTP");
+      toast.error(`Could Not Send OTP `);
     }
     dispatch(setLoading(false));
-    toast.dismiss(toastId);
+    // toast.dismiss(toastId);
   };
 }
 
@@ -53,7 +66,7 @@ export function signUp(
   navigate
 ) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    // const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
       const response = await apiConnector("POST", SIGNUP_API, {
@@ -75,17 +88,17 @@ export function signUp(
       navigate("/login");
     } catch (error) {
       console.log("SIGNUP API ERROR............", error);
-      toast.error("Signup Failed");
+      toast.error(`Signup Failed `);
       navigate("/signup");
     }
     dispatch(setLoading(false));
-    toast.dismiss(toastId);
+    // toast.dismiss(toastId);
   };
 }
 
 export function login(email, password, navigate) {
   return async (dispatch) => {
-    const toastId = toast.loading("Loading...");
+    // const toastId = toast.loading("Loading...");
     dispatch(setLoading(true));
     try {
       const response = await apiConnector("POST", LOGIN_API, {
@@ -111,10 +124,10 @@ export function login(email, password, navigate) {
       navigate("/dashboard/my-profile");
     } catch (error) {
       console.log("LOGIN API ERROR............", error);
-      toast.error("Login Failed");
+      toast.error(`Login failed `);
     }
     dispatch(setLoading(false));
-    toast.dismiss(toastId);
+    // toast.dismiss(toastId);
   };
 }
 
